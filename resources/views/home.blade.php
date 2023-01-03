@@ -1,34 +1,62 @@
 @extends('layout.app')
 @section('content')
 
-<section class="section-main outer-container-cards container">
-    <div class="cards-container">
-        <button class="left-btn" onclick="scrollLft()">
+<section id="home" class="section-main outer-container-cards container">
+    <div class="cards-container position-relative">
+        <button class="left-btn carousel-arrow" onclick="scrollLft()">
             <i class="fa-solid fa-angle-left" ></i>
         </button>
-        <div id="box" class="d-flex">
+        
+        <div id="box" class="d-flex ">
+            
              @foreach ($products as $product)
-                <div class="card col-3 w-50 me-3" style="width: 18rem;">
-                    {{-- <img src={{$product->image}} class="card-img-top" alt="..."> --}}
+                {{-- card --}}
+                <div class="card col-3 w-50 me-3 my-3 single-card" >
+                    {{-- card img product --}}
+                    <a href="#">
+                        <div class="img-product">
+                        {{-- <img src={{$product->image}} class="card-img-top" alt="..."> --}}
+                        </div>
+                    </a>
+                       {{-- card body text --}}
                     <div class="card-body">
-                    <h5 class="card-title">{{$product->title}}</h5>
-                    <p class="card-text">{{$product->description}}</p>
-                    <p class="card-text">price: {{$product->price}} £</p>
-                    <p class=" card-text">condizioni: {{$product->status}}</p>
-
+                        <div class="card-text-overview">
+                            <div class="p-3">
+                                <h3 class="">{{$product->title}}</h3>
+                                <p class="">{{$product->description}}</p>
+                            </div>
+                        </div>
+                        <div class="card-details">
+                            <div class="card-price ">
+                                <p class="pt-3"> <span>Price:</span> {{$product->price}} £</p>
+                            </div>
+                            <div class="card-status">
+                                <p class="pt-3"><span>Condizioni:</span> <br> {{$product->status}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             @endforeach 
+            
         </div>
-        <button class="right-btn" onclick="scrollRgt()">
+        <button class="right-btn carousel-arrow" onclick="scrollRgt()">
             <i class="fa-solid fa-angle-right"></i>
         </button>
+        
     </div>
+    <div class="text-center mt-4 pb-4    ">
+        <a  href="{{route('products.index')}}" role="button">
+            <button class="my-btn">
+           Go to...
+            </button>
+        </a>
+        
+        
+    </div>
+    
 </section>
 
-<div class="text-center mb-4    ">
-    <a class="btn btn-primary" href="#" role="button">Go to...</a>
-</div>
+
 @endsection
 
 <script>
