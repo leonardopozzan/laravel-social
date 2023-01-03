@@ -1,0 +1,16 @@
+nav{
+    background-color: $darkblue;
+    img{
+        width: 130px;
+    }
+    li {
+        a{
+            text-decoration: none;
+            color:$lightgray;
+           
+        }
+        a:hover{
+            color:$lightblue;
+        }
+    }
+}
