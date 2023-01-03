@@ -1,6 +1,7 @@
 @extends('layout.app')
 @section('content')
-<section class="section-main outer-container-cards">
+
+<section class="section-main outer-container-cards container">
     <div class="cards-container">
         <button class="left-btn" onclick="scrollLft()">
             <i class="fa-solid fa-angle-left" ></i>
@@ -13,7 +14,7 @@
                     <h5 class="card-title">{{$product->title}}</h5>
                     <p class="card-text">{{$product->description}}</p>
                     <p class="card-text">price: {{$product->price}} £</p>
-                    <p class="">condizioni: {{$product->status}}</p>
+                    <p class=" card-text">condizioni: {{$product->status}}</p>
 
                     </div>
                 </div>
@@ -24,6 +25,10 @@
         </button>
     </div>
 </section>
+
+<div class="text-center mb-4    ">
+    <a class="btn btn-primary" href="#" role="button">Go to...</a>
+</div>
 @endsection
 
 <script>
@@ -41,4 +46,7 @@
         behavior: "smooth",
       });
     }
+
+    
+     
 </script>
