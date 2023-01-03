@@ -13,9 +13,15 @@ class ProductController extends Controller
      *
      *
      */
-    public function index()
+    public function index(Request $request)
     {
+        if(!empty($request->query('search'))){
+            $status = $request->query('search');
+            //dd($status);
+            $products = Product::where('status', $status)->get();
+       } else {
         $products = Product::all();
+       }
         return view('products.index', compact('products'));
     }
 
