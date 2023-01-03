@@ -32,13 +32,12 @@
                         {{ Auth::user()->name }}</a> <a href="{{ route('logout') }}"> <button class="my-btn">Logout
                         </button> </a>
                 @else
-                    <a href="{{ route('login') }}"> <button class="my-btn fs-5 ms-2">
+                    <a href="{{ route('loginform') }}"> <button class="my-btn fs-5 ms-2">
                             Login
                         </button> </a>
                 @endif
             </div>
         </div>
     </nav>
-
 
 </header>
