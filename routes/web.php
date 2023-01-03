@@ -19,23 +19,25 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
-Route::get('/',[PageController::class , 'home'])->name('home');
+Route::get('/', [PageController::class, 'home'])->name('home');
 
-Route::resource('products' , ProductController::class);
+Route::resource('products', ProductController::class);
 
-Route::get('/profile',[PageController::class , 'profile'])->name('profile');
+Route::get('/profile', [PageController::class, 'profile'])->name('profile');
 
 // Route::post('/login', 'LoginController@handleLogin');
-Route::post('/login', [LoginController::class , 'handleLogin'])->name('auth');
+Route::post('/login', [LoginController::class, 'handleLogin'])->name('auth');
 
 
 // Route::get('/login', 'User/LoginController@login')->name('login');
 
-Route::get('/login', [LoginController::class , 'login'])->name('login');
+Route::get('/login', [LoginController::class, 'login'])->name('login');
 
 
-Route::get('/logout', function(){
+Route::get('/logout', function () {
     Session::flush();
     Auth::logout();
     return redirect('/login');
 })->name('logout');
+
+Route::get('/team', [PageController::class, 'teampage'])->name('team');
