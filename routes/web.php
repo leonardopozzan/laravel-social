@@ -16,14 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[PageController::class , 'home'])->name('home');
+Route::get('/', [PageController::class, 'home'])->name('home');
 
-Route::resource('products' , ProductController::class);
+Route::resource('products', ProductController::class);
 
-Route::get('/profile',[PageController::class , 'profile'])->name('profile');
+Route::get('/profile', [PageController::class, 'profile'])->name('profile');
 
 Route::get('/loginform', [LoginController::class , 'showLogin'])->name('loginform');
 
 Route::post('/loginform', [LoginController::class , 'handleLogin'])->name('auth');
 
 Route::get('/logout', [LoginController::class , 'logout'] )->name('logout');
+
+Route::get('/team', [PageController::class, 'teampage'])->name('team');
+

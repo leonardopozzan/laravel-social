@@ -23,6 +23,7 @@ class LoginController extends Controller
             return view('home', compact('products'));
         }else{
             return view('loginform')->with(array('error' => 1));
+
         }
     }
     public function logout(){
