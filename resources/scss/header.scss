@@ -3,14 +3,17 @@ nav{
     img{
         width: 130px;
     }
-    li {
-        a{
-            text-decoration: none;
-            color:$lightgray;
-           
-        }
-        a:hover{
-            color:$lightblue;
+    ul{
+        margin:0;
+        li {
+            a{
+                
+                color:$lightgray;
+               
+            }
+            a:hover{
+                color:$lightblue;
+            }
         }
     }
 }
