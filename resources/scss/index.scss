@@ -17,6 +17,7 @@
         cursor: pointer;
         border: 1px solid black;
         transition: 0.3s;
+        overflow: hidden;
         
         .img-product{
             background-color: blue;
@@ -50,7 +51,7 @@
                     font-size: 13px;
                     color: $darkblue;
                 }
-    
+                
                 .card-price{
                     width: 40%;
                     text-align: center;
@@ -58,6 +59,14 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    background: linear-gradient(to right, $mainred 50%, white 50%);
+                    background-size: 200% 100%;
+                    background-position: right bottom;
+                    transition: all .5s ease-out;
+    
+                    &:hover{
+                        background-position: left bottom;
+                    }
                 }
     
                 .card-status{

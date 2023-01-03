@@ -1,14 +1,20 @@
 @extends('layout.app')
+<?php 
+$search = '';
+if(isset($_GET['search'])){
+    $search = $_GET['search'];
+}
+?>
 @section('content')
     <div id="index">
         <h1>elenco prodotti</h1>
         <div class="container d-flex">
             <form class="" action="{{route('products.index')}}" method="GET">
                 <select name="search" id="search">
-                    <option value="">Vedi tutti i prodotti</option>
-                    <option value="nuovo">Prodotti nuovi</option>
-                    <option value="usato buone condizioni">Prodotti in buone condizioni</option>
-                    <option value="usato come nuovo">Prodotti come nuovi</option>
+                    <option value="" {{($search == '') ? 'selected' : ''}}>Vedi tutti i prodotti</option>
+                    <option value="nuovo"  {{($search == 'nuovo') ? 'selected' : ''}}>Prodotti nuovi</option>
+                    <option value="usato buone condizioni"  {{($search == 'usato buone condizioni') ? 'selected' : ''}}>Prodotti in buone condizioni</option>
+                    <option value="usato come nuovo"  {{($search == 'usato come nuovo') ? 'selected' : ''}}>Prodotti come nuovi</option>
                 </select>
                 <button type="submit" class="my-btn ms-3">Cerca</button>
             </form>
