@@ -28,4 +28,10 @@ img{
     align-items: center;
     align-content: center;
     justify-content: center;
+
+    a img{
+        &:hover{
+            filter: brightness(100);
+        }
+    }
 }
