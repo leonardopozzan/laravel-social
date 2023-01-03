@@ -3,6 +3,7 @@
 
 main{
     background-image: url(../img/altitudes.jpg);
+    background-size: cover;
 }
 
 #home{
@@ -66,6 +67,8 @@ main{
     height: 450px;
     cursor: pointer;
     border: 1px solid black;
+    overflow: hidden;
+    transition: .5s;
 
     .img-product{
         background-color: blue;
@@ -104,14 +107,17 @@ main{
                 width: 40%;
                 text-align: center;
                 border-right: 1px solid black;
+                
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                tra
+                background: linear-gradient(to right, $mainred 50%, white 50%);
+                background-size: 200% 100%;
+                background-position: right bottom;
+                transition: all .5s ease-out;
 
                 &:hover{
-                    width: 100%;
-                    background-color: $mainred;
+                    background-position: left bottom;
                 }
             }
 
@@ -126,7 +132,7 @@ main{
     }
 
     &:hover{
-        box-shadow: 7px 7px black;
+        box-shadow: 7px 7px $lightgray;
     }
 }
 }
