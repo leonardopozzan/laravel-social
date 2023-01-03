@@ -1,0 +1,19 @@
+nav{
+    background-color: $darkblue;
+    img{
+        width: 130px;
+    }
+    ul{
+        margin:0;
+        li {
+            a{
+                
+                color:$lightgray;
+               
+            }
+            a:hover{
+                color:$lightblue;
+            }
+        }
+    }
+}
