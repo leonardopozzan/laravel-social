@@ -14,7 +14,7 @@
             <div>
                 <ul class="d-flex  list-unstyled">
                     <li class="px-3 "> <a href="{{ route('products.index') }}"> Shop</a></li>
-                    <li class="px-3"> <a href="#nogo">Il nostro team </a> </li>
+                    <li class="px-3"> <a href="{{ route('team') }}">Il nostro team </a> </li>
                     @if (Auth::check())
                         <li class="my-3"> <a href="{{ route('products.create') }}">crea un prodotto </a></li>
                     @endif
