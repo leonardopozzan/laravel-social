@@ -1,0 +1,24 @@
+@use'./_variables' as *;
+// scroller home
+.outer-container-cards{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 60px;
+    overflow-x: auto;
+
+    .cards-container {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+    }
+}
+
+#box {
+    flex-wrap: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto; 
+    padding-bottom: 40px;
+}
