@@ -13,7 +13,7 @@
             </div>
             <div>
                 <label for="price">prezzo prodotto </label>
-                <input type="number" step="0.01" id="price" name="price" required max="99999">
+                <input type="number" step="0.01" id="price" name="price" required max="99999" min="0">
 
             </div>
             <div>
@@ -31,7 +31,7 @@
                 </select>
             </div>
             <div>
-                <label for="available">disponibilita</label>
+                <label for="available">disponibilità</label>
                 <select name="available" id="available" required>
                     <option value="1" selected>Si</option>
                     <option value="0">No</option>
