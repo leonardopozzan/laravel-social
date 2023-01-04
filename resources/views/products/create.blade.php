@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('content')
-    <div class="container">
+    <div class="container crea">
         <div class="p-5 ">
             <div class="my-5 bg-create p-5">
 
@@ -30,8 +30,11 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="price" class="d-block mb-2">Prezzo del prodotto </label>
-                                <input type="number" class="form-controll @error('price') is-invalid @enderror"
-                                    step="0.01" id="price" name="price" max="99999" min="0">
+                                <div class="d-flex">
+                                    <input type="number" class="form-controll text-center @error('price') is-invalid @enderror"
+                                        step="0.01" id="price" name="price" max="99999" min="0">
+                                        <p class="align-self-center m-0 ms-3 fs-3">€</p>
+                                </div>
                                 @error('price')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -40,8 +43,8 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="description" class="form-label d-block mb-2">Descrizione del prodotto</label>
-                                <textarea name="description" id="description" rows="3" placeholder="scrivi la descrizione del prodotto "
-                                    class="form-control w-25"></textarea>
+                                <textarea name="description" id="description" rows="3" placeholder="Inserisci una descrizione del prodotto "
+                                    class="form-control w-75"></textarea>
 
 
 
@@ -68,17 +71,17 @@
                                 <label for="available" class="d-block mb-2">Disponibilità</label>
                                 <select name="available" id="available"
                                     class="form-controll @error('title') is-invalid @enderror">
-                                    <option value="1" selected>Si</option>
-                                    <option value="0">No</option>
+                                    <option value="1" selected>Yep</option>
+                                    <option value="0">Nope</option>
                                 </select>
                                 @error('available')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
 
                             </div>
-                            <div class="mt-5">
-                                <button class="my-btn" type="submit">crea prodotto </button>
-                                <button class="my-btn" type="reset">reset campi </button>
+                            <div class="mt-5 d-flex flex-column gap-4 justify-content-start">
+                                <button class="my-btn me-5 text-uppercase" type="submit">crea prodotto </button>
+                                <button class="my-btn me-5 text-uppercase" type="reset">reset campi </button>
 
                             </div>
 
