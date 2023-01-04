@@ -98,6 +98,7 @@ class ProductController extends Controller
         $validator = Validator::make($data, [
             'title' => 'required|max:98',
             'price' => 'required|max:99999|min:0',
+            'description' => '',
             'status' => 'required|max:30',
             'available' => 'required'
 
@@ -109,8 +110,10 @@ class ProductController extends Controller
             'price.max' => 'il prezzo non puo superare :max £',
             'price.min' => 'il prezzo non puo essere inferiore a :min £',
             'status.required' => 'definire lo stato del prodotto ',
-            'status.max' => '!!!!!!definire lo stato del prodotto :max !!!!!!',
-            'available.required' => 'la disponibilità e richiesta '
-        ]);
+            'status.max' => 'lo stato del prodotto  non puo  superare i :max caratteri',
+            'available.required' => 'la disponibilità è richiesta '
+        ])->validate();
+
+        return $validator;
     }
 }

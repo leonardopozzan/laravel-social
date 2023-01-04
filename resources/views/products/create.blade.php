@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('content')
-    <div class="container">
+    <div class="container bg-white">
         {{-- title price description status available --}}
         <h1>Aggiungi un prodotto </h1>
         <form action="{{ route('products.store') }}" method="POST">
@@ -17,8 +17,9 @@
 
             </div>
             <div>
-                <label for="description">descrizione prodotto</label>
-                <textarea name="description" id="description" rows="3">Descrizione...</textarea>
+                <label for="description" class="form-label">descrizione prodotto</label>
+                <textarea name="description" id="description" rows="3" placeholder="scrivi la descrizione del prodotto "
+                    class="form-control"></textarea>
 
 
             </div>
@@ -36,6 +37,11 @@
                     <option value="1" selected>Si</option>
                     <option value="0">No</option>
                 </select>
+            </div>
+            <div>
+                <button class="my-btn" type="submit">crea prodotto </button>
+                <button class="my-btn" type="reset">reset campi </button>
+
             </div>
         </form>
 
