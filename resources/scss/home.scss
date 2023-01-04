@@ -3,6 +3,7 @@
 
 main{
     background-image: url(../img/altitudes.jpg);
+  
 }
 
 #home{
@@ -39,8 +40,9 @@ main{
    top: 50%;
     transform: translate(-0%, -50%);
    background-color: transparent;
+  
     border: none;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(4px);
     i{
         font-size: 40px;
         
