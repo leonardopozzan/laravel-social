@@ -9,7 +9,7 @@
         <div id="box" class="d-flex ">
             @foreach ($products as $product)
                 {{-- card --}}
-                <div class="card col-6 col-lg-4 col-xl-3 me-3 my-3 single-card" >
+                <div class="card col-6 col-lg-4 col-xl-3 me-4 my-3 single-card" >
                     {{-- card img product --}}
                     <a href="#">
                         <div class="img-product">
