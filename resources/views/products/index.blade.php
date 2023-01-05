@@ -25,7 +25,7 @@ if(isset($_GET['search'])){
                 {{-- card --}}
                     <div class="card my-3 single-card" >
                         {{-- card img product --}}
-                        <a href="#">
+                        <a href="{{route('products.show', $product->id)}}">
                             <div class="img-product">
                             {{-- <img src={{$product->image}} class="card-img-top" alt="..."> --}}
                             </div>
