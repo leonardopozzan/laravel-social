@@ -1,15 +1,23 @@
 @extends('layout.app')
 
 @section('content')
-<form action="{{route('auth')}}" method="post">
-    @csrf
-    <label for="email">email</label>
-    <input type="text" name="email">
-    <label for="password">password</label>
-    <input type="text" name="password">
-    <button type="submit">Invia</button>
-    @isset($error)
-    <div>Le credenziali sono errate</div>
-    @endisset
-</form>
+<div class="d-flex align-items-center justify-content-center">
+    <form action="{{route('auth')}}" method="post" id="login-form" class="bg-create">
+        @csrf
+        <div class="field">
+            <label for="email">Email</label>
+            <input type="text" name="email">
+        </div>
+        <div class="field">
+            <label for="password">Password</label>
+            <input type="text" name="password">
+            @isset($error)
+            <div>Le credenziali sono errate</div>
+            @endisset
+        </div>
+        <div class="text-center">
+            <button type="submit" class="my-btn">Invia</button>
+        </div>
+    </form>
+</div>
 @endsection

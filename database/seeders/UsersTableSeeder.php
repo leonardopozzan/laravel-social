@@ -15,19 +15,15 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $newUser = new User();
-        $newUser->name= 'leonardo';
-        $newUser->email= 'leonardo@leonardo.com';
-        $newUser->password= bcrypt('leonardo');
-        $newUser->subscribed_at = '2023-01-03';
-        $newUser->role = 'admin';
-        $newUser->save();
-        $newUser = new User();
-        $newUser->name= 'valentina';
-        $newUser->email= 'valentina@valentina.com';
-        $newUser->password= bcrypt('valentina');
-        $newUser->subscribed_at = '2023-01-05';
-        $newUser->role = 'customer';
-        $newUser->save();
+        $admin = config('admin');
+        foreach($admin as $person){
+            $newUser = new User();
+            $newUser->name= $person['name'];
+            $newUser->email= $person['email'];
+            $newUser->password= bcrypt($person['password']);
+            $newUser->subscribed_at = today()->toDateString();;
+            $newUser->role = 'admin';
+            $newUser->save();
+        }
     }
 }
