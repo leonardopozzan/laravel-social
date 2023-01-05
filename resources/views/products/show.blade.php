@@ -24,7 +24,7 @@
                         <button class="my-btn">aggiungi al carrello</button>
                     </div>
                     {{-- btn modifica .... aggiungere poi solo se admin? --}}
-                    @if (Auth::check())
+                    @if (Auth::check() && Auth::user()->role == 'admin')
                         <button class="my-btn">Modifica il prodotto</button>
                     @endif
                 </div>

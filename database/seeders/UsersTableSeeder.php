@@ -20,6 +20,14 @@ class UsersTableSeeder extends Seeder
         $newUser->email= 'leonardo@leonardo.com';
         $newUser->password= bcrypt('leonardo');
         $newUser->subscribed_at = '2023-01-03';
+        $newUser->role = 'admin';
+        $newUser->save();
+        $newUser = new User();
+        $newUser->name= 'valentina';
+        $newUser->email= 'valentina@valentina.com';
+        $newUser->password= bcrypt('valentina');
+        $newUser->subscribed_at = '2023-01-05';
+        $newUser->role = 'customer';
         $newUser->save();
     }
 }
