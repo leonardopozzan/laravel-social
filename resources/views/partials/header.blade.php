@@ -15,7 +15,7 @@
                 <ul class="d-flex aling-items-center  fs-5">
                     <li class="px-3 "> <a href="{{ route('products.index') }}"> Shop</a></li>
                     <li class="px-3"> <a href="{{ route('team') }}">Il nostro Team </a> </li>
-                    @if (Auth::check())
+                    @if (Auth::check() && Auth::user()->role == 'admin')
                         <li class="px-3"> <a href="{{ route('products.create') }}">Crea un prodotto </a></li>
                     @endif
 
