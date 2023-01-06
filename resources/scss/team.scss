@@ -1,0 +1,68 @@
+@use'./_variables' as *;
+#team {
+    padding: 100px 0;
+
+    .cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+        .single-card {
+            width: calc(100% / 3 - 50px);
+            margin: 0 25px;
+            cursor: pointer;
+            border: 1px solid black;
+            transition: 0.3s;
+            overflow: hidden;
+            
+            .img-profile{
+                width: 55%;
+                height: 100%;
+            }
+
+            .card-body{
+                padding-bottom: 40px;
+                color: $darkblue;
+                line-height: 1.8;
+
+                .profile-person {
+                    text-align: center;
+                    
+                    .profile-name {
+                        display: block;
+                        font-size: 20px;
+                        font-weight: bold;
+                        letter-spacing: 0.8px;
+                        text-transform: uppercase;
+                    }
+                    .profile-qualification {
+                        display: block;
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: $mainred;
+                        letter-spacing: 0.8px;
+                    }
+                    .profile-description{
+                    padding: 15px 30px;
+                    font-size: 12px;
+                    }
+                }
+
+                .profile-social{
+                    font-size: 22px;
+                    color: $mainred;
+
+                    i {
+                        margin-right: 10px;
+                        transition: all 0.5s;
+
+                        &:hover{
+                            color: $darkblue;
+                            scale: 1.2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
