@@ -39,7 +39,9 @@
                 height: 180px;
                 overflow-y: auto;
                 border-bottom: 1px solid black;
-    
+                &::-webkit-scrollbar {
+                    display: none;
+                }
                 h3 {
                     color: $lightblue;
                     text-transform: capitalize;
