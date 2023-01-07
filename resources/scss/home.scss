@@ -146,7 +146,7 @@ main{
     }
 
     &:hover{
-        box-shadow: 7px 7px black;
+        box-shadow: $hoverShadow;
     }
 }
 }
