@@ -44,7 +44,7 @@ if (isset($_GET['search'])) {
                             </div>
                             <div class="card-details">
                                 <div class="card-price ">
-                                    <p class="pt-3"> <span>Price:</span> {{ $product->price }} €</p>
+                                    <p class="pt-3"> <span>Prezzo:</span> {{ $product->price }} €</p>
                                 </div>
                                 <div class="card-status">
                                     <p class="pt-3"><span>Condizioni:</span> <br> {{ $product->status }}</p>
