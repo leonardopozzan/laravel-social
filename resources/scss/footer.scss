@@ -1,33 +1,62 @@
 @use'./_variables' as *;
 footer{
     background-color: $darkblue;
-    .my-ul-links{
-        display: flex;
-        flex-flow: column nowrap;
-        margin: 0;
-        padding: 0;
-        li{
-            margin-bottom: 0.3rem;
-            a{
-                color: white;
-                &:hover{
-                    font-weight: bold;
-                }
+    .lp-z-index{
+        z-index: 100;
+    }
+    .color-light-blue{
+        color: $lightblue!important;
+    }
+    .title-links{
+        margin-bottom: 0.5rem;
+        text-transform: capitalize;
+        font-size: 1.5rem;
+        color: $lightblue;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover{
+            .arrow{
+                color: inherit;
             }
-            
         }
-        li:first-child{
-            font-size: 1.5rem;
-            color: $lightblue;
-            margin-bottom: 0.5rem;
+        .arrow{
+            transition: 0.4s;
+            color: transparent;
+            display: inline-block;
+            margin-left: 0.6rem;
         }
     }
+    .ul-container{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: transparent;
+        .my-ul-links{
+            display: flex;
+            flex-flow: column nowrap;
+            margin: 0;
+            padding: 0;
+            li{
+                margin-bottom: 0.3rem;
+                text-transform: capitalize;
+                text-align: end;
+                a{
+                    color: inherit;
+                    transition: color 0.3s;
+                    &:hover{
+                        font-weight: bold;
+                    }
+                }
+                
+            }
+        }
+    }
+    
     img{
         width: 170px;
     }
     #follow {
         display: flex;
-        // flex-flow: column;
         align-items: center;
         align-content: center;
         justify-content: center;
@@ -49,6 +78,26 @@ footer{
                 &:hover{
                     filter: brightness(100);
                 }
+            }
+        }
+    }
+    @media screen and (min-width:768px){
+        
+        .ul-container{
+            position: static;
+            .my-ul-links{
+                li{
+                    text-align: start;
+                    a{
+                        color: white;
+                    }
+                    
+                }
+            }
+        }
+        .title-links{
+            .arrow{
+                display: none;
             }
         }
     }
