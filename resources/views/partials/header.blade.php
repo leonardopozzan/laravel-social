@@ -38,10 +38,10 @@
                     </a>
                 @else
                     <a href="{{ route('loginform') }}">
-                        <button class="my-btn fs-5 ms-2">Login</button>
+                        <button class="my-btn ms-2">Login</button>
                     </a>
                     <a href="{{ route('users.create') }}">
-                        <button class="my-btn fs-5 ms-4">Registrati</button>
+                        <button class="my-btn ms-4">Registrati</button>
                     </a>
                 @endif
             </div>
