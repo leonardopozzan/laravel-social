@@ -28,13 +28,14 @@
 
                 @if (Auth::check())
                     <span class="text-white fs-5  px-3">Benvenuto </span> <a class="fs-5 text-capitalize pe-3"
-                        href="{{ route('profile') }}">
+                        href="{{ route('users.show', Auth::user()->id) }}">
                         {{ Auth::user()->name }}</a> <a href="{{ route('logout') }}"> <button class="my-btn">Logout
                         </button> </a>
                 @else
                     <a href="{{ route('loginform') }}"> <button class="my-btn fs-5 ms-2">
                             Login
                         </button> </a>
+                    <a href="{{ route('users.create') }}"><button class="my-btn fs-5 ms-2 ">Registrati</button></a>
                 @endif
             </div>
         </div>
