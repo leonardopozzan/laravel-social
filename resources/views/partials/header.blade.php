@@ -28,7 +28,7 @@
 
                 @if (Auth::check())
                     <span class="text-white fs-5  px-3">Benvenuto </span> <a class="fs-5 text-capitalize pe-3"
-                        href="{{ route('users.index') }}">
+                        href="{{ route('users.show', Auth::user()->id) }}">
                         {{ Auth::user()->name }}</a> <a href="{{ route('logout') }}"> <button class="my-btn">Logout
                         </button> </a>
                 @else
