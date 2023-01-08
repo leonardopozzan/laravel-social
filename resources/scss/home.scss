@@ -2,13 +2,14 @@
 // scroller home
 
 main{
-    background-image: url(../img/altitudes.jpg);
-    background-size: cover;
+    background-image: url(../img/altitudes.png);
+    background-size: cover ;
+    background-repeat: no-repeat;
+
 }
 
 #home{
 .outer-container-cards{
-    
     width: 100%;
     display: flex;
     justify-content: center;
@@ -20,6 +21,8 @@ main{
         width: 100%;
         display: flex;
         overflow-x: auto;
+        margin: 2rem 0;
+        
     }
 }
 
@@ -27,31 +30,39 @@ main{
     flex-wrap: nowrap;
     overflow-y: hidden;
     overflow-x: auto; 
-    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    & > div:first-child{
+        margin-left: 26px;
+    }
 }
 
 
 
 
 .carousel-arrow{
-   position: absolute;
-   z-index: 1000;
-   height: 90%;
-   top: 50%;
+    position: absolute;
+    z-index: 1000;
+    height: 90%;
+    top: 50%;
     transform: translate(-0%, -50%);
-   background-color: transparent;
+    background-color: transparent;
     border: none;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(4px);
     i{
         font-size: 40px;
-        
         color: black;
-         
     }
-
-   
-    
 }
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px $mainred; 
+    width: 5px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
 .left-btn {
     left: 0;
 }
@@ -68,24 +79,30 @@ main{
     cursor: pointer;
     border: 1px solid black;
     overflow: hidden;
-    transition: .5s;
+    transition: 0.3s;
 
     .img-product{
-        background-color: blue;
         width: 100%;
         height: 200px;
+        img{
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
     .card-body{
         width: 100%;
         padding: 0px;
+        background-color: white;
 
         .card-text-overview{
             width: 100%;
             height: 180px;
             overflow-y: auto;
             border-bottom: 1px solid black;
-
+            &::-webkit-scrollbar {
+                display: none;
+            }
             h3 {
                 color: $lightblue;
                 text-transform: capitalize;
@@ -132,7 +149,7 @@ main{
     }
 
     &:hover{
-        box-shadow: 7px 7px $lightgray;
+        box-shadow: $hoverShadow;
     }
 }
 }

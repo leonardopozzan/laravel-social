@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -13,9 +14,15 @@ class ProductController extends Controller
      *
      *
      */
-    public function index()
+    public function index(Request $request)
     {
+        if(!empty($request->query('search'))){
+            $status = $request->query('search');
+            //dd($status);
+            $products = Product::where('status', $status)->get();
+       } else {
         $products = Product::all();
+       }
         return view('products.index', compact('products'));
     }
 
@@ -35,18 +42,19 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    
+
     public function store(Request $request)
     {
 
-        $form_data = $request->all();
+        $form_data = $this->validation($request->all());
+
 
         //dd($form_data);
         $new_product = Product::create($form_data);
         return redirect()->route('products.show', $new_product->id);
     }
 
-    
+
     public function show(Product $product)
     {
         return view('products.show', compact('product'));
@@ -90,5 +98,28 @@ class ProductController extends Controller
     {
         $product->delete();
         return redirect()->route('products.index');
+    }
+    private function validation($data)
+    {
+        $validator = Validator::make($data, [
+            'title' => 'required|max:98',
+            'price' => 'required|max:99999|min:0',
+            'description' => '',
+            'status' => 'required|max:30',
+            'available' => 'required'
+
+
+        ], [
+            'title.required' => 'il titolo è richiesto',
+            'title.max' => 'il titolo non puo superare i :max caratteri',
+            'price.required' => 'il prezzo è richiesto',
+            'price.max' => 'il prezzo non puo superare :max £',
+            'price.min' => 'il prezzo non puo essere inferiore a :min £',
+            'status.required' => 'definire lo stato del prodotto ',
+            'status.max' => 'lo stato del prodotto  non puo  superare i :max caratteri',
+            'available.required' => 'la disponibilità è richiesta '
+        ])->validate();
+
+        return $validator;
     }
 }

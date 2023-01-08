@@ -1,4 +1,40 @@
 @use'./_variables' as *;
 @import '~bootstrap/scss/bootstrap';
 @import './home.scss';
+@import './index.scss';
 @import './footer.scss';
+@import './header.scss';
+@import './create.scss';
+@import './edit.scss';
+@import './show.scss';
+@import './loginform.scss';
+
+img{
+   max-width: 100%;
+}
+a{
+    text-decoration: none !important;
+}
+ul{
+    list-style: none;
+}
+
+
+/*button*/
+.my-btn {
+	border-radius: 10px;
+	border: 2px solid #000;
+	box-shadow: 10px 10px;
+	background-color: $mainred;
+    color:white;
+    padding: 10px 15px;
+	transition: box-shadow 300ms ease, transform 500ms ease;
+}
+
+.my-btn:hover {
+	box-shadow: none;
+}
+
+.my-btn:active {
+	transform: scale(0.9);
+}

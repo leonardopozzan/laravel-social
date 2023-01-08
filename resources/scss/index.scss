@@ -1,0 +1,124 @@
+@use'./_variables' as *;
+// stile cards
+#index{
+    padding-bottom: 100px;
+    form{
+        margin: 2rem 12px;
+        select{
+            background-color: $darkblue;
+            border-radius: 8px;
+            border: none;
+            padding: 5px;
+            color: white;
+        }
+    }
+
+    .cards-container{
+    display: flex;
+    flex-wrap: wrap;
+
+    .single-card {
+        // width: calc(100% / 4 - 24px);
+        margin: 0 12px;
+        height: 450px;
+        cursor: pointer;
+        border: 1px solid black;
+        transition: 0.3s;
+        overflow: hidden;
+        
+        .img-product{
+            
+            width: 100%;
+            height: 200px;
+            img{
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+    
+        .card-body{
+            width: 100%;
+            padding: 0px;
+            
+            .card-text-overview{
+                width: 100%;
+                height: 180px;
+                overflow-y: auto;
+                border-bottom: 1px solid black;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                h3 {
+                    color: $lightblue;
+                    text-transform: capitalize;
+                }
+            }
+    
+            .card-details{
+                height: 70px;
+                font-size: 12px;
+                display: flex;
+    
+                span {
+                    font-weight: bold;
+                    font-size: 13px;
+                    color: $darkblue;
+                }
+                
+                .card-price{
+                    width: 45%;
+                    text-align: center;
+                    border-right: 1px solid black;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: linear-gradient(to right, $mainred 50%, white 50%);
+                    background-size: 200% 100%;
+                    background-position: right bottom;
+                    transition: all .5s ease-out;
+    
+                    &:hover{
+                        background-position: left bottom;
+                    }
+                }
+    
+                .card-status{
+                    width: 55%;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    
+        &:hover{
+            
+            box-shadow: $hoverShadow;
+        }
+    }
+}
+}
+
+/*MEDIA QUARY */
+@media only screen and (max-width: 576px) {
+    .single-card {
+      width: 100%; /* occupa l'intera larghezza in mobile */
+      img{
+        width: 100%;
+      }
+    }
+  }
+  
+  @media only screen and (min-width: 577px) and (max-width: 991px) {
+    .single-card {
+      width: calc(100% / 2 - 24px); /* occupa 1/3 della larghezza in tablet */
+    }
+  }
+  
+  @media only screen and (min-width: 992px) {
+    .single-card {
+      width: calc(100% / 4 - 24px); /* occupa 1/4 della larghezza in PC */
+    }
+  }
+  
