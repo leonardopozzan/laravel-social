@@ -8,12 +8,10 @@
 }
 
 .crea{
-
     label  {
         font-size: 20px;
         text-transform: uppercase;
     }
-
     input{
         background-color: $darkblue;
         border-radius: 8px;
@@ -21,20 +19,15 @@
         padding: 5px;
         color: white;
     }
-
     textarea{
-        
         background-color: $darkblue;
         border-radius: 8px;
         border: none;
         padding: 5px;
         color: white;
     }
-
-    
-
     select{
-         background-color: $darkblue;
+        background-color: $darkblue;
         border-radius: 8px;
         border: none;
         padding: 5px;

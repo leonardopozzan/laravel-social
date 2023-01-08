@@ -9,7 +9,7 @@
 @import './show.scss';
 @import './loginform.scss';
 @import './team.scss';
-
+@import './registerform.scss';
 
 img{
    max-width: 100%;
@@ -29,7 +29,9 @@ ul{
 	box-shadow: 10px 10px;
 	background-color: $mainred;
     color:white;
-    padding: 10px 15px;
+	font-size: 0.9rem;
+		padding: 7px 10px;
+   
 	transition: box-shadow 300ms ease, transform 500ms ease;
 }
 
@@ -39,4 +41,14 @@ ul{
 
 .my-btn:active {
 	transform: scale(0.9);
+	
+}
+
+@media screen  and (min-width:768px){
+	.my-btn {
+		
+		font-size: 1rem;
+		padding: 10px 15px;
+		
+	}
 }

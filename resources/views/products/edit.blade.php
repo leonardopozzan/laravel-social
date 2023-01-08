@@ -29,7 +29,7 @@
                             <div class="form-group mb-3">
                                 <label for="description" class="form-label d-block mb-2">Descrizione del prodotto</label>
                                 <textarea name="description" id="description" rows="3" placeholder="scrivi la descrizione del prodotto "
-                                    class="form-control w-75" value="{{old('description', $product->description)}}"></textarea>
+                                    class="form-control w-75" >{{old('description', $product->description)}}</textarea>
                             </div>
                         </div>
                         <div class="col-6">
@@ -48,8 +48,8 @@
                                 <label for="available" class="d-block mb-2">Disponibilità</label>
                                 <select name="available" id="available"
                                     class="form-controll @error('title') is-invalid @enderror">
-                                    <option value="1"{{ old('available', $product->available == '1' ? 'selected' : '') }} selected>Si</option>
-                                    <option value="0"{{ old('available', $product->available == '0' ? 'selected' : '') }}>No</option>
+                                    <option value="1"{{ old('available', $product->available == '1' ? 'selected' : '') }}>Yep</option>
+                                    <option value="0"{{ old('available', $product->available == '0' ? 'selected' : '') }}>Nope</option>
                                 </select>
                                 @error('available')
                                     <div class="invalid-feedback">{{ $message }}</div>

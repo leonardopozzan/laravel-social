@@ -1,43 +1,33 @@
+<?php  
+$ul = config('footer.ul');
+$images = config('footer.img');
+?>
 <footer>
 
-    <div class="d-flex text-white justify-content-evenly pt-5 pb-5 container">
+    <div class="d-flex pt-5 pb-5 container">
 
-        <div class="d-flex justify-content-between text-white">
-            <div class="d-flex flex-column ps-3">
-                <a href="" class="text-decoration-none"><h5>Home</h5></a>
-                <span class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quibusdam quos nulla explicabo reiciendis eaque accusamus recusandae aperiam modi fuga nemo
-                    suscipit</span>
-            </div>
-
-            <div class="d-flex flex-column ps-5">
-                <a href="" class="text-decoration-none"><h5>About</h5></a>
-                <span class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quibusdam quos nulla explicabo reiciendis eaque accusamus recusandae aperiam modi fuga nemo
-                    suscipit</span>
-            </div>
-            <div class="d-flex flex-column ps-5">
-                <a href="" class="text-decoration-none"><h5>Contacts</h5></a>
-                <span class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quibusdam quos nulla explicabo reiciendis eaque accusamus recusandae aperiam modi fuga nemo
-                    suscipit</span>
-            </div>
+        <div class="d-flex flex-column justify-content-around flex-md-row w-100 position-relative">
+            @foreach ($ul as $links)
+                <div class="col-5 col-md-3">
+                    <div class="title-links">{{$links['title']}}<i class="fa-solid fa-caret-right arrow"></i></div>
+                    <div class="ul-container">
+                        <ul class="my-ul-links">
+                            @foreach ($links['links'] as $link)
+                                <li><a href="#nogo">{{$link}}</a></li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            @endforeach
         </div>
 
         <div>
             <div class="ps-5 pe-3" id="follow-contenitore">
-                <a href="" class="text-decoration-none"><h5>Follow us</h5></a>
+                <a href=""><h4 class="title">Follow us</h4></a>
                 <div id="follow" class="text-center">
-                    <a href="" class="ps-1"><img src="{{ Vite::asset('resources/img/footer-facebook.png') }}"
-                            alt="facebook"></a>
-                    <a href="" class="ps-1"><img src="{{ Vite::asset('resources/img/footer-twitter.png') }}"
-                            alt="twitter"></a>
-                    <a href="" class="ps-1"><img src="{{ Vite::asset('resources/img/footer-youtube.png') }}"
-                            alt="youtube"></a>
-                    <a href="" class="ps-1"><img src="{{ Vite::asset('resources/img/footer-pinterest.png') }}"
-                            alt="pinterest"></a>
-                    <a href="" class="ps-1"><img src="{{ Vite::asset('resources/img/footer-periscope.png') }}"
-                            alt="periscope"></a>
+                    @foreach ($images as $image)
+                    <a href="" class="ps-1"><img src="{{ Vite::asset($image['path']) }}" alt="{{$image['name']}}"></a>
+                    @endforeach
                 </div>
             </div>
             <div class="pt-3 text-center">
@@ -47,5 +37,32 @@
 
     </div>
 
-
 </footer>
+
+<script>
+let links = document.getElementsByClassName('ul-container')
+let title = document.getElementsByClassName('title-links')
+let arrow = document.getElementsByClassName('arrow')
+
+for(let i=0; i<title.length; i++){
+    title[i].addEventListener('click',function(){
+        for(let j=0; j<links.length; j++){
+            if(j==i){
+                if(links[j].classList.contains('text-white')){
+                    links[j].classList.remove('text-white')
+                    links[j].classList.remove('lp-z-index')
+                    arrow[j].classList.remove('color-light-blue')
+                }else{
+                    links[j].classList.add('text-white')
+                    links[j].classList.add('lp-z-index')
+                    arrow[j].classList.add('color-light-blue')
+                }
+            }else{
+                links[j].classList.remove('text-white')
+                links[j].classList.remove('lp-z-index')
+                arrow[j].classList.remove('color-light-blue')
+            }
+        }
+    })
+}
+</script>

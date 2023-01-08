@@ -1,5 +1,11 @@
 @use'./_variables' as *;
 #show-page{
+    .available{
+        color: green;
+    }
+    .not-available{
+        color: $mainred;
+    }
     .bg-show{
     background-color: transparent;
     backdrop-filter: blur(15px);
@@ -8,4 +14,5 @@
     border-right: 1px solid rgba(255, 255, 255, 0.5);
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
+
 }
