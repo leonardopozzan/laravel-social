@@ -9,8 +9,8 @@ if (isset($_GET['search'])) {
     <div id="index">
 
         <div class="container d-flex">
-            <form class="my-3" action="{{ route('products.index') }}" method="GET">
-                <select name="search" id="search">
+            <form action="{{ route('products.index') }}" method="GET">
+                <select name="search" id="search" class="form-controll">
                     <option value="" {{ $search == '' ? 'selected' : '' }}>Vedi tutti i prodotti</option>
                     <option value="nuovo" {{ $search == 'nuovo' ? 'selected' : '' }}>Prodotti nuovi</option>
                     <option value="usato buone condizioni" {{ $search == 'usato buone condizioni' ? 'selected' : '' }}>
