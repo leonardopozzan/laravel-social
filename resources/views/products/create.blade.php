@@ -18,7 +18,7 @@
 
                         <div class="col-6">
                             <div class="form-group mb-3">
-                                <label for="title" class="d-block mb-3">Nome del prodotto</label>
+                                <label for="title" class="d-block mb-3">Nome</label>
 
                                 <input type="text" class="form-controll @error('title') is-invalid @enderror"
                                     id="title" name="title" maxlength="98">
@@ -29,9 +29,9 @@
 
                             </div>
                             <div class="form-group mb-3">
-                                <label for="price" class="d-block mb-2">Prezzo del prodotto </label>
+                                <label for="price" class="d-block mb-2">Prezzo </label>
                                 <div class="d-flex">
-                                    <input type="number" class="form-controll text-center @error('price') is-invalid @enderror"
+                                    <input type="number" class="form-controll @error('price') is-invalid @enderror"
                                         step="0.01" id="price" name="price" max="99999" min="0">
                                         <p class="align-self-center m-0 ms-3 fs-3">€</p>
                                 </div>
@@ -42,7 +42,7 @@
 
                             </div>
                             <div class="form-group mb-3">
-                                <label for="description" class="form-label d-block mb-2">Descrizione del prodotto</label>
+                                <label for="description" class="form-label d-block mb-2">Descrizione</label>
                                 <textarea name="description" id="description" rows="3" placeholder="Inserisci una descrizione del prodotto "
                                     class="form-control w-75"></textarea>
 
@@ -55,7 +55,7 @@
 
 
                             <div class="form-group mb-3">
-                                <label for="status" class="d-block mb-2">Status del prodotto </label>
+                                <label for="status" class="d-block mb-2">Status</label>
                                 <select name="status" id="status"
                                     class="form-controll @error('title') is-invalid @enderror">
                                     <option value="nuovo" selected>Nuovo</option>
