@@ -23,8 +23,13 @@
             <div class="col-4 d-flex justify-content-center align-items-center">
                 <div class="mb-5">
                     {{-- fare il font diverso per il titolo  --}}
-                    <h3 class="text-capitalize mb-3 ">{{ $product->title }}</h3>
-                    <h5>Prezzo: <span>{{ $product->price }}</span> €</h5>
+                    <h3 class="text-capitalize m-0">{{ $product->title }}</h3>
+                    @if($product->available)
+                        <span class="available">Disponibile</span>
+                    @else
+                        <span class="not-available">Non Disponibile</span>
+                    @endif
+                    <h5 class="mt-3 ">Prezzo: <span>{{ $product->price }}</span> €</h5>
                     <div>
 
                         <div class="my-5">
@@ -33,10 +38,17 @@
                         </div>
 
 
-                        <button class="my-btn text-end me-5">Aggiungi al carrello</button>
-                        @if (Auth::check() && Auth::user()->role == 'admin')
-                            <button class="my-btn">Modifica il prodotto</button>
-                        @endif
+                        <div class="d-flex align-items-center">
+                            <button class="my-btn me-5"><i class="fa-solid fa-plus me-2"></i><i class="fa-solid fa-cart-shopping"></i></button>
+                            @if (Auth::check() && Auth::user()->role == 'admin')
+                                <a href="{{route('products.edit',$product->id)}}"><button class="my-btn me-5">Modifica</button></a>
+                                <form action="{{route('products.destroy',$product->id)}}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button class="my-btn" type="submit">Elimina</button>
+                                </form>
+                            @endif
+                        </div>
                     </div>
                     {{-- btn modifica .... aggiungere poi solo se admin? --}}
                 </div>
