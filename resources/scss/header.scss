@@ -1,5 +1,8 @@
-nav{
+#navbar{
     background-color: $darkblue;
+    height: 135px;
+    overflow: hidden;
+    transition: height 0.5s;
     img{
         width: 130px;
     }
@@ -7,13 +10,44 @@ nav{
         margin:0;
         li {
             a{
-                
                 color:$lightgray;
-               
             }
             a:hover{
                 color:$lightblue;
             }
         }
     }
+    .fa-solid.fa-user{
+        font-size: 24px;
+    }
+    .fa-solid.fa-bars{
+        font-size: 2rem;
+    }
+    #hamburger-menu{
+        cursor: pointer;
+        order: 2;
+    }
+    .web-site-links{
+        order: 3;
+        margin-right: 2rem;
+    }
+
+}
+#navbar.my-height{
+    height: 230px;
+}
+#navbar.my-height-small{
+    height: 195px;
+}
+@media screen and (min-width:992px){
+    #navbar{
+        .web-site-links{
+            width: max-content!important;
+            margin-right: 0;
+        }
+        .login-links{
+            order: 4;
+        }
+    }
+    
 }
