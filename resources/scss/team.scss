@@ -7,14 +7,39 @@
     flex-wrap: wrap;
     justify-content: center;
 
+        .bg-team{
+            background-color: transparent;
+            backdrop-filter: blur(15px);
+            color: $lightblue;
+            border-radius: 10px;
+            border-right: 1px solid rgba(255, 255, 255, 0.5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }            
+
         .single-card {
             width: calc(100% / 3 - 50px);
             margin: 0 25px;
             cursor: pointer;
-            border: 1px solid black;
+            border: 1px solid white;
             transition: 0.3s;
             overflow: hidden;
-            
+            position: relative;
+
+            .white-stripe{
+                position: absolute;
+                top: 25px;
+                left: -60px;
+                height: 45px;
+                width: 220px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                background-color: white;
+                transform: rotate(-45deg);
+                box-shadow: 3px 3px 3px black;
+            }
+
             .img-profile{
                 width: 55%;
                 height: 100%;
@@ -22,7 +47,6 @@
 
             .card-body{
                 padding-bottom: 40px;
-                color: $darkblue;
                 line-height: 1.8;
 
                 .profile-person {
@@ -50,18 +74,25 @@
 
                 .profile-social{
                     font-size: 22px;
-                    color: $mainred;
 
-                    i {
-                        margin-right: 10px;
-                        transition: all 0.5s;
+                    a {
+                       
+                        i {
+                            color: $mainred;
+                            margin-right: 10px;
+                            transition: all 0.5s;
 
-                        &:hover{
-                            color: $darkblue;
-                            scale: 1.2;
-                        }
+                            &:hover{
+                                color: white;
+                                scale: 1.2;
+                            } 
+                        } 
                     }
                 }
+            }
+
+            &:hover {
+                box-shadow: $hoverShadow;
             }
         }
     }

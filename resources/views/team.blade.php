@@ -11,7 +11,10 @@ $users = config('admin')
             <div class="cards-container">
                 @foreach ($users as $user)
                 {{-- card --}}
-                <div class="card my-4 single-card">
+                <div class="card my-4 single-card bg-team">
+                    <div class="white-stripe">
+                        <span>{{$user['flag']}}</span>
+                    </div>
                     {{-- img --}}
                     <div class="pt-4 pb-3 d-flex justify-content-center align-items-center">
                         <img class="img-profile" src="{{$user['image']}}" alt="immagine profilo {{$user['name']}}">
@@ -26,9 +29,10 @@ $users = config('admin')
                         </div>
                         {{-- social --}}
                         <div class="profile-social">
-                            <i class="fa-brands fa-facebook"></i>
-                            <i class="fa-brands fa-instagram"></i>
-                            <i class="fa-brands fa-telegram"></i>
+                            <a href="#nogo"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#nogo"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#nogo"><i class="fa-brands fa-telegram"></i></a>
+                            <a href="{{$user['github']}}" target="blank"><i class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
                 </div>  
