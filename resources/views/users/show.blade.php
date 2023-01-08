@@ -8,20 +8,14 @@
         <div class="my-5 bg-create p-5">
 
             <div>
-                <h3>nome:</h3>
-                <h4>{{ $user->name }}</h4>
+                <span class="fs-4">Nome:</span><span class="fs-4 ms-2 text-capitalize">{{ $user->name }}</span>
             </div>
             <div>
-                <h3>email:</h3>
-                <h4>{{ $user->email }}</h4>
+                <span class="fs-4">Email:</span><span class="fs-4 ms-2">{{ $user->email }}</span>
             </div>
             <div>
-                <h3>registrato da :</h3>
-                <h4>{{ $newdata }}</h4>
+                <span class="fs-4">Registrato dal:</span><span class="fs-4 ms-2 text-capitalize">{{ $newdata }}</span>
             </div>
-
-
-
         </div>
-        </div>
+    </section>
     @endsection
