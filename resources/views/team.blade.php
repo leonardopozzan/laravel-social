@@ -11,7 +11,7 @@ $users = config('admin')
             <div class="cards-container">
                 @foreach ($users as $user)
                 {{-- card --}}
-                <div class="card my-4 single-card bg-team">
+                <div class="card single-card bg-team">
                     <div class="white-stripe">
                         <span>{{$user['flag']}}</span>
                     </div>

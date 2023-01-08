@@ -17,8 +17,8 @@
         }            
 
         .single-card {
-            width: calc(100% / 3 - 50px);
-            margin: 0 25px;
+            width: 60%;
+            margin: 25px auto;
             cursor: pointer;
             border: 1px solid white;
             transition: 0.3s;
@@ -76,7 +76,6 @@
                     font-size: 22px;
 
                     a {
-                       
                         i {
                             color: $mainred;
                             margin-right: 10px;
@@ -93,6 +92,29 @@
 
             &:hover {
                 box-shadow: $hoverShadow;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:992px) {
+    #team {
+        .cards-container {
+                .single-card{
+                width: calc(100% / 2 - 80px);
+                margin: 35px 40px;
+            }
+        }
+        
+    }
+}
+
+@media screen and (min-width:1200px) {
+    #team {
+        .cards-container {
+                .single-card{
+                width: calc(100% / 3 - 56px);
+                margin: 50px 28px;
             }
         }
     }
