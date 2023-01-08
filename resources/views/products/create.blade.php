@@ -20,7 +20,7 @@
                             <div class="form-group mb-3">
                                 <label for="title" class="d-block mb-3">Nome</label>
 
-                                <input type="text" class="form-controll @error('title') is-invalid @enderror"
+                                <input type="text" class=" @error('title') is-invalid @enderror"
                                     id="title" name="title" maxlength="98">
                                 @error('title')
                                     <div class="invalid-feedback">{{ $message }}</div>
@@ -31,7 +31,7 @@
                             <div class="form-group mb-3">
                                 <label for="price" class="d-block mb-2">Prezzo </label>
                                 <div class="d-flex">
-                                    <input type="number" class="form-controll @error('price') is-invalid @enderror"
+                                    <input type="number" class=" @error('price') is-invalid @enderror"
                                         step="0.01" id="price" name="price" max="99999" min="0">
                                         <p class="align-self-center m-0 ms-3 fs-3">€</p>
                                 </div>
@@ -44,7 +44,7 @@
                             <div class="form-group mb-3">
                                 <label for="description" class="form-label d-block mb-2">Descrizione</label>
                                 <textarea name="description" id="description" rows="3" placeholder="Inserisci una descrizione del prodotto "
-                                    class="form-control w-75"></textarea>
+                                    class="w-75"></textarea>
 
 
 
@@ -57,7 +57,7 @@
                             <div class="form-group mb-3">
                                 <label for="status" class="d-block mb-2">Status</label>
                                 <select name="status" id="status"
-                                    class="form-controll @error('title') is-invalid @enderror">
+                                    class="@error('title') is-invalid @enderror">
                                     <option value="nuovo" selected>Nuovo</option>
                                     <option value="usato come nuovo">Usato come nuove</option>
                                     <option value="usato buone condizioni">usato buone condizioni</option>
@@ -70,7 +70,7 @@
                             <div class="form-group mb-3">
                                 <label for="available" class="d-block mb-2">Disponibilità</label>
                                 <select name="available" id="available"
-                                    class="form-controll @error('title') is-invalid @enderror">
+                                    class="@error('title') is-invalid @enderror">
                                     <option value="1" selected>Yep</option>
                                     <option value="0">Nope</option>
                                 </select>
