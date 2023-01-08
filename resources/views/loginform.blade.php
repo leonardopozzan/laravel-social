@@ -6,11 +6,11 @@
         @csrf
         <div class="field">
             <label for="email">Email</label>
-            <input type="text" name="email">
+            <input type="email" name="email">
         </div>
         <div class="field">
             <label for="password">Password</label>
-            <input type="text" name="password">
+            <input type="password" name="password">
         </div>
         @isset($error)
             <div class="mb-3 text-center">Le credenziali sono errate</div>
