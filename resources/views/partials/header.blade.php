@@ -29,7 +29,7 @@
             <div class="login-links">
 
                 @if (Auth::check())
-                    <span class="text-white fs-5 d-none d-lg-inline">Benvenuto</span>
+                    <span class="text-white fs-5 d-none d-lg-inline me-1">Benvenuto</span>
                     <a class="pe-3" href="{{ route('users.show', Auth::user()->id) }}">
                         <i class="fa-solid fa-user d-lg-none"></i> <span class="d-none d-lg-inline text-capitalize fs-5">{{Auth::user()->name}}</span>
                     </a> 
